@@ -15,25 +15,30 @@ public class MainActivity extends AppCompatActivity {
     Button btn2;
     FirebaseAuth auth;
     FirebaseUser user;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        auth= FirebaseAuth.getInstance();
-        user=auth.getCurrentUser();
-        textView=findViewById(R.id.maintext);
-        btn2=findViewById(R.id.signout);
-        if(user!=null){
-            Intent intent =new Intent(getApplicationContext(),Login.class);
+
+        auth = FirebaseAuth.getInstance();
+        user = FirebaseAuth.getInstance().getCurrentUser(); // Assigning to the class-level variable
+
+        textView = findViewById(R.id.maintext);
+        btn2 = findViewById(R.id.signout);
+
+        if(user == null){ // If user is not authenticated
+            Intent intent = new Intent(getApplicationContext(), Login.class);
             startActivity(intent);
             finish();
         }
         else {
-            textView.setText(user.getEmail());
+            textView.setText(user.getEmail()); // Access email only if user is not null
         }
+
         btn2.setOnClickListener(v -> {
             auth.signOut();
-            Intent intent =new Intent(getApplicationContext(),Login.class);
+            Intent intent = new Intent(getApplicationContext(), Login.class);
             startActivity(intent);
             finish();
         });

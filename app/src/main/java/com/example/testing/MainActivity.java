@@ -21,8 +21,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        auth = FirebaseAuth.getInstance();
-        user = FirebaseAuth.getInstance().getCurrentUser(); // Assigning to the class-level variable
+        user = FirebaseAuth.getInstance().getCurrentUser();
 
         textView = findViewById(R.id.maintext);
         btn2 = findViewById(R.id.signout);

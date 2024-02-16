@@ -4,11 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,7 +33,8 @@ import java.util.Objects;
 
 public class Login extends AppCompatActivity {
     TextInputEditText editText,editPass;
-    Button btn1,googleAuth;
+    Button btn1;
+    ImageButton googleAuth;
 
     FirebaseDatabase database;
     GoogleSignInClient mGoogleSignInClient;
@@ -62,7 +63,7 @@ public class Login extends AppCompatActivity {
         editPass= findViewById(R.id.password);
         progressBar= findViewById(R.id.prograssbar);
         btn1= findViewById(R.id.btnlogin);
-        googleAuth=findViewById(R.id.btngoogle);
+        googleAuth=(ImageButton)findViewById(R.id.btngoogle);
         database=FirebaseDatabase.getInstance();
 
 

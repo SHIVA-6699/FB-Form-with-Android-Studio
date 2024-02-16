@@ -22,11 +22,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         user = FirebaseAuth.getInstance().getCurrentUser();
-
+        auth = FirebaseAuth.getInstance();
         textView = findViewById(R.id.maintext);
         btn2 = findViewById(R.id.signout);
 
-        if(user == null){ // If user is not authenticated
+        if(user == null){
             Intent intent = new Intent(getApplicationContext(), Login.class);
             startActivity(intent);
             finish();

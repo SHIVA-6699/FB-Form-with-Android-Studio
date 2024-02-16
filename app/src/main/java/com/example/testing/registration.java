@@ -18,6 +18,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.Objects;
+
 public class registration extends AppCompatActivity {
     TextInputEditText editText,editPass;
     Button btn;
@@ -77,7 +79,7 @@ public class registration extends AppCompatActivity {
 
                                     }
                                     else{
-                                        Toast.makeText(registration.this, "Error"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(registration.this, "Error"+ Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
                                     }
                                 }
                             });

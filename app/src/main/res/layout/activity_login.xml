@@ -8,22 +8,25 @@
     android:gravity="center"
     android:padding="25dp"
     tools:context=".Login">
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
         app:srcCompat="@drawable/avartar" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/Form"
-        android:gravity="center"
-        android:fontFamily="sans-serif"
-        android:textSize="30sp"
         android:layout_margin="30dp"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:text="@string/Form"
+        android:textSize="30sp"
 
 
         />
+
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -67,7 +70,7 @@
     <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="55dp"
-        android:layout_margin="25dp"
+        android:layout_margin="5dp"
 
         android:background="@drawable/shadow_background">
 
@@ -81,7 +84,24 @@
             android:scaleType="fitCenter" />
 
     </FrameLayout>
+    <FrameLayout
+        android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:layout_margin="5dp"
 
+        android:background="@drawable/shadow_background">
+
+
+        <ImageButton
+            android:id="@+id/btngithub"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@null"
+            android:scaleType="fitXY"
+            android:src="@drawable/github_signup" />
+
+    </FrameLayout>
 
     <TextView
         android:id="@+id/click_to_register"
